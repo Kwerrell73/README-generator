@@ -4,10 +4,10 @@ const inquirer = require('inquirer');
 const generateMarkDown = require("./utils/generateMarkDown");
 
 // TODO: Create an array of questions for user input
-const questions = [
+const readmeQuestions = [
     {
         type: 'input',
-        message: 'what is your GitHub username? (Reuqired)',
+        message: 'what is your GitHub username? (Required)',
         name: 'username',
         validate: (answer) => {
             if (answer) {
@@ -55,19 +55,19 @@ const questions = [
         choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node']
       },
 
-      {
-        type: 'input',
-        name: 'link',
-        message: 'Enter the GitHub link to your project. (Required)',
-        validate: linkInput => {
-          if (linkInput) {
-            return true;
-          } else {
-            console.log('You need to enter a project GitHub link!');
-            return false;
-          }
-        }
-      },
+     // {
+     //   type: 'input',
+      //  name: 'link',
+      //  message: 'Enter the GitHub link to your project. (Required)',
+      //  validate: linkInput => {
+      //    if (linkInput) {
+      //      return true;
+      //    } else {
+      //      console.log('You need to enter a project GitHub link!');
+      //     return false;
+       //   }
+   //     }
+   //   },
 
 
 
@@ -76,11 +76,56 @@ const questions = [
 
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {  return `
+
+# ${response.title}
+
+# Table of Content
+-[description](#description)
+-[installation](#installation)
+-[usage](#usage)
+-[licenses](#licenses)
+-[contribution](#contribution)
+-[test](#test)
+-[username](#username)
+-[profile](#profile)
+
+${response.username}
+##username:
+
+    ${response.description}
+##description:
+
+    ${response.installation}
+##installation:
+
+    ${response.usage}
+##usage:
+
+    ${response.licenses}
+##licenses:
+
+    ${response.contribution}
+##contribution:
+
+    ${response.test}
+##test:
+
+    ${response.email}
+##email:
+
+    ${response.profile}
+##profile:
+`;
+}
+
+module.exports = generateMarkdown;
+
+
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(questions)
+    inquirer.prompt(readmeQuestions)
     .then((inquirerResponse, data) => {   
         console.log("Generate ReadMe");
         fs.writeFileSync("ReadMe.md", inquirerResponse, data);
