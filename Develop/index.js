@@ -33,6 +33,12 @@ inquirer.prompt(
 
             }
         },
+        {
+            type: 'input',
+            message: 'What badge links would you like to include? (Required)',
+            name: 'badge',
+      
+        },
 
         {
             type: 'input',
@@ -50,16 +56,31 @@ inquirer.prompt(
         },
 
         {
+            type: 'input',
+            message: 'What installation instructions are required for your project. (Required)',
+            name: 'installation',
+
+            validate: (answer) => {
+                if (answer) {
+                    return true;
+                } else {
+                    console.log("Please provide valid installation instructions.");
+                }
+
+            }
+        },
+        {
             type: 'checkbox',
             name: 'languages',
-            message: 'What did languages did you use to create this project? (Check all that apply)',
+            message: 'What languages were used to create this project? (Check all that apply)',
             choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node'],
         },
 
         {
-            type: 'input',
+            type: 'list',
             message: "What licenses are required with this project?",
-            name: "licenses"
+            name: "licenses",
+            choices: ['Apache', 'GNU', 'MIT', 'Mozilla'],
 
         },
 
@@ -71,13 +92,20 @@ inquirer.prompt(
 
         {
             type: 'input',
+            message: 'Please provide the project tests.',
+            name: 'test',
+
+        },
+
+        {
+            type: 'input',
             name: 'link',
-            message: 'Enter the GitHub link to your project. (Required)',
+            message: 'Enter the GitHub repo link to your project. (Required)',
             validate: linkInput => {
                 if (linkInput) {
                     return true;
                 } else {
-                    console.log('You need to enter a project GitHub link!');
+                    console.log('Please enter a valid GitHub repo link!');
                     return false;
                 }
             }
@@ -89,36 +117,56 @@ inquirer.prompt(
     username,
     title,
     description,
+    badge,
+    installation,
+    usage,
     languages,
     licenses,
     contribution,
-    link
-})=>{
-    const template =`# ${title}
+    test,
+    link,
+    }) => {
+    const template = `# ${title}
+
+
+
+    ## Table of contents
     
-   * [username](#username) 
+
    * [title](#title) 
    * [description](#description) 
-   * [languages](#languages) 
+   * [badge](#badge)
+   * [installation](#installation)
+   * [usage](#usage)
    * [licenses](#licenses) 
    * [contribution](#contribution) 
+   * [test](#test)
    * [link](#link) 
+
    ## username
     ${username}
-    ## title
+   ## title
     ${title}
-    ## description
+   ## description
     ${description}
-    ## languages
+   ## badge
+    ${badge}
+   ## installation
+    ${installation}
+    ## usage
+    ${usage}
+   ## languages
     ${languages}
-    ## licenses
+   ## licenses
     ${licenses}
-    ## contribution
+   ## contribution
     ${contribution}
-    ## link
+   ## test
+    ${test}
+   ## link
     ${link}`
-    
-writeToFile(title, template);
+
+    writeToFile(title, template);
 }
 );
 
@@ -127,10 +175,15 @@ writeToFile(title, template);
 // TODO: Create a function to write README file
 
 function writeToFile(fileName, data) {
-    fs.writeFile(`./${fileName.toLowerCase().split(' ').join('')}.md`,data,(err)=>{
-        if(err){
+    fs.writeFile(`./${fileName.toLowerCase().split(' ').join('')}.md`, data, (err) => {
+        if (err) {
             console.log(err)
         }
-            console.log('README has been generated'); 
+        console.log('README has been generated');
     })
 }
+function init() {
+
+}
+
+init();
