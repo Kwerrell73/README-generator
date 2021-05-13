@@ -1,4 +1,4 @@
-# Jeff
+# Kim
 
 
 
@@ -14,21 +14,22 @@
    * [contribution](#contribution) 
    * [test](#test)
    * [link](#link) 
+   * [questions](#questions)
 
    ## username
     Kwerrell73
    ## title
-    Jeff
+    Kim
    ## description
-    perfect marriage
+    mit
    ## badge
-    https://img.shields.io/badge/License-MIT-yellow.svg
+    sister
    ## installation
-    get married
+    none
     ## usage
     undefined
    ## languages
-    JavaScript,Node
+    JavaScript
    ## licenses
     MIT
    ## contribution
@@ -36,4 +37,11 @@
    ## test
     none
    ## link
-    https://github.com/Kwerrell73/README-generator
+    nn
+   ## questions 
+    Username: Kwerrell73
+    Github Profile Link: github.com/Kwerrell73
+  
+    Email:kw@gmil.com
+Please kindly email me for any additional questions.
+    

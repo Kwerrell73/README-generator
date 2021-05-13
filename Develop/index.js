@@ -22,6 +22,20 @@ inquirer.prompt(
 
         {
             type: 'input',
+            message: 'what is your email address? (Required)',
+            name: 'email',
+            validate: (answer) => {
+                if (answer) {
+                    return true;
+                } else {
+                    console.log("A valid email address is required.");
+                }
+
+            }
+        },
+
+        {
+            type: 'input',
             message: 'What is the title of your project? (Required)',
             name: 'title',
             validate: (answer) => {
@@ -115,6 +129,7 @@ inquirer.prompt(
     ]
 ).then(({
     username,
+    email,
     title,
     description,
     badge,
@@ -142,6 +157,7 @@ inquirer.prompt(
    * [contribution](#contribution) 
    * [test](#test)
    * [link](#link) 
+   * [questions](#questions)
 
    ## username
     ${username}
@@ -164,7 +180,13 @@ inquirer.prompt(
    ## test
     ${test}
    ## link
-    ${link}`
+    ${link}
+   ## questions 
+    ${"Username: " + username}
+    ${"Github Profile Link: " + 'github.com/' + username}
+  
+    ${"Email:" + email + '\nPlease kindly email me for any additional questions.'}
+    `
 
     writeToFile(title, template);
 }
