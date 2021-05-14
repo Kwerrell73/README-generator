@@ -1,4 +1,4 @@
-# kk
+# dd
 
 
 
@@ -17,30 +17,41 @@
    * [questions](#questions)
 
    ## username
-    kk
+    dd
+
    ## title
-    kk
+    dd
+
    ## description
-    kk
+    dd
+
    ## badge
-    [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-    kk
-    ## usage
-    undefined
+    Apache 2.0
+  
+   ## installation
+    dd
+    
+   ## usage
+    dd
+
    ## languages
     JavaScript
+
    ## licenses
     Apache 2.0
+
    ## contribution
-    kk
+    dd
+
    ## test
-    kk
+    dd
+
    ## link
-    kk
+    dd
+
    ## questions 
-    Username: kk
-    Github Profile Link: github.com/kk
-  
-    Email:kk
+    Username: dd
+    Github Profile Link: github.com/dd  
+    Email:dd
 Please kindly email me for any additional questions.
     

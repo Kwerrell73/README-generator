@@ -47,7 +47,7 @@ inquirer.prompt(
 
             }
         },
-       
+
         {
             type: 'input',
             message: 'Please provide a description of your project. (Required)',
@@ -77,6 +77,15 @@ inquirer.prompt(
 
             }
         },
+
+        {
+            type: 'input',
+            message: 'What is the usage for this project?',
+            name: 'usage',
+
+
+        },
+
         {
             type: 'checkbox',
             name: 'languages',
@@ -89,7 +98,7 @@ inquirer.prompt(
             message: "What licenses are required with this project?",
             name: "licenses",
             choices: ['Apache 2.0', 'GNU', 'MIT', 'Mozilla'],
-          
+
         },
 
         {
@@ -133,7 +142,7 @@ inquirer.prompt(
     contribution,
     test,
     link,
-    }) => {
+}) => {
     const template = `# ${title}
 
 
@@ -154,30 +163,40 @@ inquirer.prompt(
 
    ## username
     ${username}
+
    ## title
     ${title}
+
    ## description
     ${description}
+
    ## badge
-    ${`[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`}
+    ${licenses}
+  
    ## installation
     ${installation}
-    ## usage
+    
+   ## usage
     ${usage}
+
    ## languages
     ${languages}
+
    ## licenses
     ${licenses}
+
    ## contribution
     ${contribution}
+
    ## test
     ${test}
+
    ## link
     ${link}
+
    ## questions 
     ${"Username: " + username}
-    ${"Github Profile Link: " + 'github.com/' + username}
-  
+    ${"Github Profile Link: " + 'github.com/' + username}  
     ${"Email:" + email + '\nPlease kindly email me for any additional questions.'}
     `
 
