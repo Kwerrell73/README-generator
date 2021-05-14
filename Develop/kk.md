@@ -1,4 +1,4 @@
-# Kim
+# kk
 
 
 
@@ -17,31 +17,30 @@
    * [questions](#questions)
 
    ## username
-    Kwerrell73
+    kk
    ## title
-    Kim
+    kk
    ## description
-    mit
+    kk
    ## badge
-    sister
-   ## installation
-    none
+    [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+    kk
     ## usage
     undefined
    ## languages
     JavaScript
    ## licenses
-    MIT
+    Apache 2.0
    ## contribution
-    me
+    kk
    ## test
-    none
+    kk
    ## link
-    nn
+    kk
    ## questions 
-    Username: Kwerrell73
-    Github Profile Link: github.com/Kwerrell73
+    Username: kk
+    Github Profile Link: github.com/kk
   
-    Email:kw@gmil.com
+    Email:kk
 Please kindly email me for any additional questions.
     

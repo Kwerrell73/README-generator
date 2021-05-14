@@ -47,13 +47,7 @@ inquirer.prompt(
 
             }
         },
-        {
-            type: 'input',
-            message: 'What badge links would you like to include? (Required)',
-            name: 'badge',
-      
-        },
-
+       
         {
             type: 'input',
             message: 'Please provide a description of your project. (Required)',
@@ -94,8 +88,8 @@ inquirer.prompt(
             type: 'list',
             message: "What licenses are required with this project?",
             name: "licenses",
-            choices: ['Apache', 'GNU', 'MIT', 'Mozilla'],
-
+            choices: ['Apache 2.0', 'GNU', 'MIT', 'Mozilla'],
+          
         },
 
         {
@@ -132,7 +126,6 @@ inquirer.prompt(
     email,
     title,
     description,
-    badge,
     installation,
     usage,
     languages,
@@ -166,7 +159,7 @@ inquirer.prompt(
    ## description
     ${description}
    ## badge
-    ${badge}
+    ${`[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`}
    ## installation
     ${installation}
     ## usage
