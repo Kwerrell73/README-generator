@@ -3,7 +3,7 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 //const generateBadge = require("./utils/generateMarkDown");
 
-
+//Function to render badge based on license selected
 function renderLicenseBadge(license) {
     let licenseBadge;
     switch (license) {
@@ -171,18 +171,11 @@ inquirer.prompt(
     test,
     link,
 }) => {
-    //let licenseHolder
-    //if (licenses === 'MIT') {
-    //    licenseHolder = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
-    //}
-
+  
     const template = `# ${title}
-
-
 
     ## Table of contents
     
-
    * [title](#title) 
    * [description](#description) 
    * [badge](#badge)
@@ -228,9 +221,10 @@ inquirer.prompt(
     ${link}
 
    ## questions 
-    ${"Username: " + username}
-    ${"Github Profile Link: " + 'github.com/' + username}  
-    ${"Email:" + email + '\nPlease kindly email me for any additional questions.'}
+    Username: ${username}
+    Github Profile Link: [github.com/${username}](https://github.com/${username}) 
+    Email: ${email}
+    Please kindly email me for any additional questions.
     `
 
     writeToFile(title, template);
